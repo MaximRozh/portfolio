@@ -292,7 +292,7 @@ body {
 
 .skills .container .card {
   position: absolute;
-  top: calc(50% - 200px);
+  top: calc(55% - 200px);
   left: 30%;
   transform: translate(-50%, calc(100px * var(--i))) rotate(40deg) skew(-20deg, -10deg);
   width: 300px;
@@ -406,7 +406,7 @@ body {
   z-index: 1;
   opacity: 1;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
-  transform: translate(calc(-50% + calc(350px * var(--i))), -50%) rotate(0deg) skew(0deg, 0deg);
+  transform: translate(calc(-60% + calc(350px * var(--i))), -30%) rotate(0deg) skew(0deg, 0deg);
 }
 
 .skills .container:hover .card .content {
