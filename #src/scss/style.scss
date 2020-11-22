@@ -7,6 +7,7 @@
 }
 body {
     font-family: 'Poppins', sans-serif;
+    color: #ffffff;
 }
 /**************preloader****************/
 .wrapper {
@@ -412,7 +413,7 @@ body {
         width: 100%;
         margin: 0;
         padding: 32px 0 16px;
-        color: green;
+        color: #fff;
         font-size: 40px;
         font-weight: 400;
         text-align: center;
@@ -421,73 +422,13 @@ body {
     &-description {
         max-width: 65%;
         margin: 0 auto 32px;
-        color: #382266;
+        color: #fff;
         font-size: 20px;
         font-weight: 300;
         text-align: center;
       }
-    &-nav {
-        max-width: 1024px;
-        margin: 0 auto 10px;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        background-color: #cccccc;
-        &-btn {
-            width: 128px;
-            margin: 18px 13px 13px;
-            padding: 0 5px 4px;
-            background-color: transparent;
-            color: #fff;
-            font-size: 18px;
-            font-weight: 400;
-            text-align: center;
-            border: none;
-            position: relative;
-            &:before {
-                content: "";
-                position: absolute;
-                top: -13%;
-                left: 50%;
-                transform: translateX(-50%);
-                border-width: 0;
-                border-style: solid;
-                border-color: #fff;
-                width: 128px;
-                height: 115%;
-                transition: all 0.3s linear;
-                border-top-width: 2px;
-                border-left-width: 2px;
-            }
-            &:after {
-                content: "";
-                position: absolute;
-                top: -13%;
-                left: 50%;
-                transform: translateX(-50%);
-                border-width: 0;
-                border-style: solid;
-                border-color: #fff;
-                width: 128px;
-                height: 115%;
-                transition: all 0.3s linear;
-                border-bottom-width: 2px;
-                border-right-width: 2px;
-            }
-            &:hover.projects-nav-btn:before{
-                width: 70%;
-                height: 0%;
-            }
-            &:hover.projects-nav-btn:after {
-                width: 70%;
-                height: 0%;   
-            }
-            &:hover.projects-nav-btn:after {
-                top: 100%;
-              }
-          }
-      }
-      &-items {
+    
+    &-items {
         max-width: 1024px;
         margin: 0 auto;
         background: $bg-color;
