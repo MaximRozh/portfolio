@@ -294,7 +294,7 @@ body {
                 opacity: 0.6;
             }
             &:nth-child(4) {
-                opacity: 0.4;
+                opacity: 0;
             }
             &:nth-child(1) svg circle:nth-child(2) {
                 stroke: #DD4B25;
@@ -374,7 +374,7 @@ body {
             z-index: 1;
             opacity: 1;
             box-shadow: 0 25px 50px rgba(0,0,0,0.2);
-            transform: translate(calc(-60% + calc(350px * var(--i))),-30%) rotate(0deg) skew(0deg,0deg);
+            transform: translate(calc(-140% + calc(250px * var(--i))),-30%) rotate(0deg) skew(0deg,0deg);
         }
         &:hover .card .content {
             opacity: 1;
@@ -440,12 +440,12 @@ body {
             display: block;
             margin: 20px 25px;
             width: 400px;
-            background-color: #7078a9;
+            background: $secondary-color;
             position: relative;
             overflow: hidden;
             &-info {
                 margin: 3px 0 8px;
-                color: #fff;
+                color: #000;
                 font-size: 20px;
                 font-weight: 300;
                 text-align: center;
