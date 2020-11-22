@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <title>Document</title>
@@ -135,6 +135,22 @@
                                     <circle cx="70" cy="70" r="70"></circle>
                                 </svg>
                                 <div class="number">
+                                    <h2>80<span>%</span></h2>
+                                </div>
+                            </div>
+                            <h2 class="inner-text">Html</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" style="--i:1">
+                    <div class="content" style="--j:3">
+                        <div class="content-inner">
+                            <div class="percent">
+                                <svg>
+                                    <circle cx="70" cy="70" r="70"></circle>
+                                    <circle cx="70" cy="70" r="70"></circle>
+                                </svg>
+                                <div class="number">
                                     <h2>70<span>%</span></h2>
                                 </div>
                             </div>
@@ -142,8 +158,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="card" style="--i:1">
-                    <div class="content" style="--j:3">
+                <div class="card" style="--i:2">
+                    <div class="content" style="--j:4">
                         <div class="content-inner">
                             <div class="percent">
                                 <svg>
@@ -160,7 +176,44 @@
                 </div>
             </div>
         </section>
-        <section class="projects"></section>
+        <section id="projects" class="projects">
+            <h1 class="projects-title">
+                Projects
+            </h1>
+            <h3 class="projects-description">Examples of my latest projects build with HTML, CSS and JavaScript. My
+                portfolio includes static websites, web applications and illustrations made with pure CSS offering an
+                insight
+                into my recent accomplishments.</h3>
+
+            <div class="projects-items">
+                <div class="projects-item">
+                    <a href="https://maximrozh.github.io/markup/" target="_blank">
+                        <img src="img/proj1.png" class="projects-item-thumbnail" alt="image hover effects">
+                        <h2 class="projects-item-info">MyLib</h2>
+                        <div class="projects-item-hover">
+                            <h2 class="projects-item-hover-title">
+                                MyLib<span class="projects-title-dot title-dot-white"></span>
+                            </h2>
+                            <p class="projects-item-hover-description">Component library with html and css code examples
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="projects-item">
+                    <a href="https://github.com/MaximRozh/Responsive" target="_blank">
+                        <img src="img/proj2.png" class="projects-item-thumbnail" alt="image hover effects">
+                        <h2 class="projects-item-info">Responsive web-site</h2>
+                        <div class="projects-item-hover">
+                            <h2 class="projects-item-hover-title">
+                                Responsive web-site<span class="projects-title-dot title-dot-white"></span>
+                            </h2>
+                            <p class="projects-item-hover-description">html page with burger menu and carousel using
+                                JQuery
+                            </p>
+                        </div>
+                    </a>
+                </div>
+        </section>
         <footer class="footer"></footer>
 
     </div>

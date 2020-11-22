@@ -45,3 +45,9 @@ document.body.onload = function() {
     }
     }, 1000)
 }
+
+$(document).ready(function() {
+    $('.changemode').click(function(){
+        $('.changemode').toggleClass('active')
+    })
+})
