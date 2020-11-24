@@ -4,7 +4,7 @@ scroll = window.pageYOffset;
 document.addEventListener('scroll', function (e) {
     var offset = window.pageYOffset;
     scroll = offset;
-    monone.style.width = (100 + scroll/5) + '%';
+    monone.style.width = (100 + scroll/4) + '%';
 });
 
 var montwo = document.getElementById('montwo')
@@ -46,8 +46,17 @@ document.body.onload = function() {
     }, 1000)
 }
 
-$(document).ready(function() {
-    $('.changemode').click(function(){
-        $('.changemode').toggleClass('active')
-    })
-})
+//burger 
+const navSlide = () => {
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.header-box-items');
+    const navLinks = document.querySelectorAll('.header-box-items li');
+
+    burger.addEventListener('click', () => {
+
+    nav.classList.toggle('header-active-bureger');
+
+});
+}
+navSlide();
+
