@@ -611,6 +611,22 @@ body {
                 font-size: 25px;
             }
         }
+        .flex-center {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          
+          .icon-3d {
+            padding: 10px;
+            animation: icon3d 200ms 10;
+            color: #fff;
+          }
+          .icon-3d:hover {
+            animation: icon3d 200ms infinite;
+          }
+          
 }
 
 
@@ -662,6 +678,23 @@ body {
        
     }
 }
+@keyframes icon3d {
+    0% {
+      text-shadow: 5px 4px #f44336, -5px -6px #2196f3;
+    }
+    25% {
+      text-shadow: -5px -6px #f44336, 5px 4px #2196f3;
+    }
+    50% {
+      text-shadow: 5px -4px #f44336, -8px 4px #2196f3;
+    }
+    75% {
+      text-shadow: -8px -4px #f44336, -5px -4px #2196f3;
+    }
+    100% {
+      text-shadow: -5px 0 #f44336, 5px -4px #2196f3;
+    }
+  }
 
 ::-webkit-scrollbar {
     width: 12px;
