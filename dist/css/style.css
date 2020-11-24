@@ -671,6 +671,37 @@ body {
   height: 45%;
 }
 
+.footer {
+  padding: 15px 0 0 0;
+  background: #131925;
+}
+
+.footer-title {
+  padding: 32px 0 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.footer-title .h1 {
+  width: 20%;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 400;
+  border-bottom: 2px solid red;
+}
+
+.footer-description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-description .h2 {
+  font-size: 25px;
+}
+
 /**************animation****************/
 
 @-webkit-keyframes loader {
