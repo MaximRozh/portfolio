@@ -229,7 +229,7 @@ body {
 
 .about {
   font-size: 24px;
-  padding: 0 32px 48px;
+  padding: 15px 32px 48px;
   background: #1F2437;
 }
 
@@ -318,6 +318,7 @@ body {
 .skills {
   height: 100vh;
   background: #1F2437;
+  padding: 15px 0 0 0;
 }
 
 .skills-title {
@@ -525,7 +526,7 @@ body {
 }
 
 .projects {
-  padding: 0 32px 48px;
+  padding: 15px 32px 48px;
   background: #1F2437;
   z-index: 4;
   overflow: hidden;
