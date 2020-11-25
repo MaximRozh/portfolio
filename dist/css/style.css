@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  color: #ffffff;
+  color: #fff;
 }
 
 /**************preloader****************/
@@ -76,16 +76,16 @@ body {
   padding: 30px 0;
   background: #53657D;
   opacity: 0.9;
-  filter: drop-shadow(rgba(120, 159, 188, 0.5) 0px 8px 10px);
+  filter: drop-shadow(rgba(83, 101, 125, 0.8) 0px 8px 10px);
 }
 
 .sticky .header-links {
-  color: #131925;
+  color: #E5E3E4;
   transition: 1s;
 }
 
 .sticky .header-links:hover {
-  color: #ffffff;
+  color: #F1EBD5;
   transform: scale(1.2);
 }
 
@@ -156,7 +156,7 @@ body {
 .header-box .burger div {
   width: 25px;
   height: 3px;
-  background: red;
+  background: #fff;
   margin: 5px;
 }
 
@@ -246,7 +246,7 @@ body {
   text-align: center;
   font-size: 40px;
   font-weight: 400;
-  border-bottom: 2px solid red;
+  border-bottom: 2px solid #FF3E38;
 }
 
 .about-description {
@@ -297,7 +297,7 @@ body {
   transform: translateX(-50%);
   width: 10px;
   height: 200px;
-  background: linear-gradient(#1C97FF, transparent);
+  background: linear-gradient(#34A997, transparent);
   border-radius: 10px;
 }
 
@@ -309,7 +309,7 @@ body {
   transform: translateX(-50%);
   width: 10px;
   height: 200px;
-  background: linear-gradient(#1C97FF, transparent);
+  background: linear-gradient(#34A997, transparent);
   filter: blur(20px);
 }
 
@@ -332,7 +332,7 @@ body {
   text-align: center;
   font-size: 40px;
   font-weight: 400;
-  border-bottom: 2px solid red;
+  border-bottom: 2px solid #FF3E38;
 }
 
 .skills p {
@@ -545,7 +545,7 @@ body {
   text-align: center;
   font-size: 40px;
   font-weight: 400;
-  border-bottom: 2px solid red;
+  border-bottom: 2px solid #FF3E38;
 }
 
 .projects-description {
@@ -627,7 +627,7 @@ body {
   border-top-width: 2px;
   border-left-width: 2px;
   border-style: solid;
-  border-color: #1F7D71;
+  border-color: #FF3E38;
   transition: all 1.5s linear;
 }
 
@@ -642,7 +642,7 @@ body {
   border-bottom-width: 2px;
   border-right-width: 2px;
   border-style: solid;
-  border-color: #990100;
+  border-color: #FF3E38;
   transition: all 1.5s linear;
 }
 
@@ -689,7 +689,7 @@ body {
   text-align: center;
   font-size: 40px;
   font-weight: 400;
-  border-bottom: 2px solid red;
+  border-bottom: 2px solid #FF3E38;
 }
 
 .footer-description {
@@ -899,13 +899,14 @@ body {
     flex-direction: column;
     align-items: center;
     width: 40%;
-    padding: 40px 0;
+    padding: 80px 0;
     transform: translateX(100%);
     transition: transform 0.5s ease-in;
   }
 
   .header-box-items li a {
-    color: red;
+    color: #FE425C;
+    font-weight: bold;
   }
 
   .header-box .burger {
@@ -990,6 +991,18 @@ body {
   .projects-items .projects-item {
     max-width: 300px;
     max-height: 400px;
+  }
+
+  .footer {
+    padding: 40px 16px 24px;
+  }
+
+  .footer-title {
+    padding: 16px 0 30px;
+  }
+
+  .footer-title .h1 {
+    width: 50%;
   }
 
 @-webkit-keyframes navLinkFade {

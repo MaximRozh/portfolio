@@ -7,7 +7,7 @@
 }
 body {
     font-family: 'Poppins', sans-serif;
-    color: #ffffff;
+    color: $font-color;
 }
 /**************preloader****************/
 .wrapper {
@@ -64,12 +64,12 @@ body {
     padding: 30px 0;
     background: $secondary-color;
     opacity: 0.9;
-    filter: drop-shadow(rgba(120, 159, 188, 0.5) 0px 8px 10px);
+    filter: drop-shadow(rgba(83, 101, 125, 0.8) 0px 8px 10px);
     .header-links {
-        color: #131925;
+        color: #E5E3E4;
         transition: 1s;
         &:hover {
-            color: #ffffff;
+            color: #F1EBD5;
             transform: scale(1.2);
         }
     }
@@ -130,7 +130,7 @@ body {
             div {
                 width: 25px;
                 height: 3px;
-                background: red;
+                background: #fff;
                 margin: 5px;
             } 
         }
@@ -213,7 +213,7 @@ body {
             text-align: center;
             font-size: 40px;
             font-weight: 400;
-            border-bottom: 2px solid red;
+            border-bottom: 2px solid $border-color;
         }
     }
     &-description {
@@ -254,7 +254,7 @@ body {
                 transform: translateX(-50%);
                 width: 10px;
                 height: 200px;
-                background: linear-gradient(#1C97FF,transparent);
+                background: linear-gradient(#34A997,transparent);
                 border-radius: 10px;
             }
             &:after {
@@ -265,7 +265,7 @@ body {
                 transform: translateX(-50%);
                 width: 10px;
                 height: 200px;
-                background: linear-gradient(#1C97FF,transparent);
+                background: linear-gradient(#34A997,transparent);
                 filter: blur(20px);
             }
             
@@ -286,7 +286,7 @@ body {
                 text-align: center;
                 font-size: 40px;
                 font-weight: 400;
-                border-bottom: 2px solid red;
+                border-bottom: 2px solid $border-color;
             }
         }
         p { 
@@ -472,7 +472,7 @@ body {
             text-align: center;
             font-size: 40px;
             font-weight: 400;
-            border-bottom: 2px solid red;
+            border-bottom: 2px solid $border-color;
         }
     }
     &-description {
@@ -544,7 +544,7 @@ body {
                     border-top-width: 2px;
                     border-left-width: 2px;
                     border-style: solid;
-                    border-color: #1F7D71;
+                    border-color: $border-color;
                     transition: all 1.5s linear;
                   }
                 &:after {
@@ -558,7 +558,7 @@ body {
                     border-bottom-width: 2px;
                     border-right-width: 2px;
                     border-style: solid;
-                    border-color: #990100;
+                    border-color: $border-color;
                     transition: all 1.5s linear;
                   }
                   &-title {
@@ -600,7 +600,7 @@ body {
             text-align: center;
             font-size: 40px;
             font-weight: 400;
-            border-bottom: 2px solid red;
+            border-bottom: 2px solid $border-color;
         }
     }
     &-description {
@@ -680,16 +680,16 @@ body {
 }
 @keyframes icon3d {
     0% {
-      text-shadow: 5px 4px #f44336, -5px -6px #2196f3;
+      text-shadow: 5px 4px $FooterColor1, -5px -6px $FooterColor2;
     }
     25% {
-      text-shadow: -5px -6px #f44336, 5px 4px #2196f3;
+      text-shadow: -5px -6px $FooterColor1, 5px 4px $FooterColor2;
     }
     50% {
-      text-shadow: 5px -4px #f44336, -8px 4px #2196f3;
+      text-shadow: 5px -4px $FooterColor1, -8px 4px $FooterColor2;
     }
     75% {
-      text-shadow: -8px -4px #f44336, -5px -4px #2196f3;
+      text-shadow: -8px -4px $FooterColor1, -5px -4px $FooterColor2;
     }
     100% {
       text-shadow: -5px 0 #f44336, 5px -4px #2196f3;
@@ -719,12 +719,13 @@ body {
         flex-direction: column;
         align-items: center;
         width: 40%;
-        padding: 40px 0;
+        padding: 80px 0;
         transform: translateX(100%); 
         transition: transform 0.5s ease-in;
         li {
             a {
-            color: red; 
+            color: #FE425C; 
+            font-weight: bold;
         } 
     }
     }
@@ -798,7 +799,15 @@ body {
             }
         }
     }
-
+    .footer {
+        padding: 40px 16px 24px;
+        &-title {
+            padding: 16px 0 30px;
+            .h1 {
+                width: 50%;
+            }
+        }
+    }
     @keyframes navLinkFade {
         from {
             opacity: 0;
