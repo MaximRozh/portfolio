@@ -304,9 +304,8 @@ body {
 .about-text .rocket:after {
   content: "";
   position: absolute;
-  bottom: -195px;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: -200px;
+  left: 45%;
   width: 10px;
   height: 200px;
   background: linear-gradient(#34A997, transparent);
@@ -335,7 +334,7 @@ body {
   border-bottom: 2px solid #FF3E38;
 }
 
-.skills p {
+.skills-text {
   padding: 0 0 0 25px;
 }
 
@@ -343,13 +342,14 @@ body {
   position: relative;
   width: 100%;
   height: 500px;
+  z-index: 0;
 }
 
 .skills .container .card {
   position: absolute;
-  top: calc(55% - 200px);
+  top: 20%;
   left: 50%;
-  transform: translate(-50%, calc(100px * var(--i))) rotate(40deg) skew(-20deg, -10deg);
+  transform: translate(-50%, calc(90px * var(--i))) rotate(40deg) skew(-20deg, -10deg);
   width: 150px;
   height: 250px;
   background: #53657D;
@@ -357,7 +357,7 @@ body {
   justify-content: center;
   align-items: center;
   box-shadow: 25px 25px 100px rgba(0, 0, 0, 0.2);
-  z-index: calc(0 * var(--i));
+  z-index: calc(-1 * var(--i));
   transition: 1s;
 }
 
