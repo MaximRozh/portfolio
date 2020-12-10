@@ -8,11 +8,10 @@
 body {
     font-family: 'Poppins', sans-serif;
     color: $font-color;
+    background: $bg-color;
 }
 /**************preloader****************/
-.wrapper {
-    height: 100vh;
-}
+
 .container {
     max-width: 1440px;
     margin: 0 auto;
@@ -146,52 +145,49 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
-
     .clouds {
         position: absolute;
         top: 0;
         left: 0;
         height: 100%;
         max-width: 100%; 
-        animation: clouds 15s linear infinite; 
-        
+        animation: clouds 15s linear infinite;
     }
     &:before {
         content: "";
         position: absolute;
         bottom: 0;
         width: 100%;
-        height: 100px;
-        z-index: 99;
+        height: 10%;
+        z-index: 20;
         background: linear-gradient(transparent, $bg-color);
+        box-shadow: 0 25px 25px $bg-color;
     }
     .parallax {
+        height: 100vh;
         padding: 0 0 70% 0;
         overflow: hidden;
         position: relative;
         img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: fill;
             position: absolute;
-
+            mix-blend-mode: luminosity;
         }
-        &-mountain-one {
-            right: 35%;
+        .parallax-mountain-one {
+            right: 40%;
             transform: translateY(25%);
             z-index: 9;
-            mix-blend-mode: luminosity;
-            
         }
-        &-mountain-two {
-            top: 15%;
+        .parallax-mountain-two {
+            top: 18%;
             z-index: 10;
-            transform: translateX(35%);
-            mix-blend-mode: luminosity;
+            transform: translateX(40%);
         }
-        &-text {
-            right: 0;
-            transform: translateY(30%);
+        .parallax-text {
+            right: -3%;
+            transform: translateY(60%);
         }
 
     }
@@ -200,8 +196,7 @@ body {
 /**************about****************/
 .about {
     font-size: 24px;
-    padding: 15px 32px 48px;
-    background: $bg-color;
+    padding: 5px 32px 48px;
     &-title {
         padding: 32px 0 16px;
         display: flex;
@@ -246,17 +241,6 @@ body {
             position: relative;
             animation: rocket 0.2s ease infinite;
             margin: 0 50px;
-            &:before {
-                content: "";
-                position: absolute;
-                bottom: -195px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 10px;
-                height: 200px;
-                background: linear-gradient(#34A997,transparent);
-                border-radius: 10px;
-            }
             &:after {
                 content: "";
                 position: absolute;
@@ -267,14 +251,22 @@ body {
                 background: linear-gradient(#34A997,transparent);
                 filter: blur(20px);
             }
+            &-light {
+                    position: absolute;
+                    bottom: -195px;
+                    left: 44%;
+                    transform: translateX(-50%);
+                    width: 10px;
+                    height: 200px;
+                    background: linear-gradient(#34A997,transparent);
+                    border-radius: 10px;
+            }
             
         }
     }
 }
 /**************skills**********/
 .skills {
-    height: 100vh;
-    background: $bg-color;
     padding: 15px 0 0 0;
         &-title {
             padding: 32px 0 16px;
@@ -301,64 +293,66 @@ body {
             top: 20%;
             left: 50%;
             transform: translate(-50%,calc(90px * var(--i))) rotate(40deg) skew(-20deg,-10deg);
-            width: 150px;
+            width: 13.5%;
             height: 250px;
+            border-radius: 5px;
             background: $secondary-color;
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 25px 25px 100px rgba(0,0,0,0.2);
+            box-shadow: 25px 25px 25px rgba(0,0,0,0.2);
             z-index: calc(-1 * var(--i));
             transition: 1s;
 
             &:nth-child(1) {
                 opacity: 1;
                 transition: 1.5s;
+                svg circle:nth-child(2) {
+                    stroke: #DD4B25;
+                    stroke-dashoffset: calc(440 - (440 * 85) / 100);
+                }
             }
             &:nth-child(2) {
                 opacity: 0.8;
                 transition: 2s;
+                svg circle:nth-child(2) {
+                    stroke: #00a1ff;
+                    stroke-dashoffset: calc(440 - (440 * 75) / 100);
+                }
             }
             &:nth-child(3) {
                 opacity: 0.6;
                 transition: 2.5s;
+                svg circle:nth-child(2) {
+                    stroke: #E5A228;
+                    stroke-dashoffset: calc(440 - (440 * 20) / 100);
+                }
             }
             &:nth-child(4) {
                 opacity: 0;
                 transition: 3s;
+                svg circle:nth-child(2) {
+                    stroke: #171516;
+                    stroke-dashoffset: calc(440 - (440 * 50) / 100);
+                }
             }
             &:nth-child(5) {
                 opacity: 0;
                 transition: 3.5s;
+                svg circle:nth-child(2) {
+                    stroke: #634F96;
+                    stroke-dashoffset: calc(440 - (440 * 40) / 100);
+                }
             }
             &:nth-child(6) {
                 opacity: 0;
                 transition: 4s;
+                svg circle:nth-child(2) {
+                    stroke: #CA4545;
+                    stroke-dashoffset: calc(440 - (440 * 35) / 100);
+                }
             }
-            &:nth-child(1) svg circle:nth-child(2) {
-                stroke: #DD4B25;
-                stroke-dashoffset: calc(440 - (440 * 80) / 100);
-            }
-            &:nth-child(2) svg circle:nth-child(2) {
-                stroke: #00a1ff;
-                stroke-dashoffset: calc(440 - (440 * 75) / 100);
-            }
-            &:nth-child(3) svg circle:nth-child(2) {
-                stroke: #E5A228;
-                stroke-dashoffset: calc(440 - (440 * 20) / 100);
-            }
-            &:nth-child(4) svg circle:nth-child(2) {
-                stroke: #171516;
-                stroke-dashoffset: calc(440 - (440 * 50) / 100);
-            }
-            &:nth-child(5) svg circle:nth-child(2) {
-                stroke: #634F96;
-                stroke-dashoffset: calc(440 - (440 * 40) / 100);
-            }
-            &:nth-child(6) svg circle:nth-child(2) {
-                stroke: #CA4545;
-                stroke-dashoffset: calc(440 - (440 * 35) / 100);
-            }
+           
             .content {
                 opacity: 0;
                 transform: translateY(50px);
@@ -369,7 +363,7 @@ body {
                     text-align: center;
                     &:hover {
                     transition: 1.2s;
-                    transform: translateY(-10px);    
+                    transform: translateY(-10px);
                     }
                     .inner-text {
                         color: #777;
@@ -377,7 +371,7 @@ body {
                         margin: 20px 0 0 0;
                         font-weight: 700;
                         font-size: 18px;
-                        letter-spacing: 1px;
+                       
                         text-transform: uppercase;
                         transition: 0.5s;
                     }
@@ -388,7 +382,6 @@ body {
                         border-radius: 50%;
                         box-shadow:  inset 0 0 50px #000;
                         background: #445561;
-                        z-index: 1000;
                         .number {
                             position: absolute;
                             top: 0;
@@ -421,29 +414,31 @@ body {
         &:hover .card {
             position: absolute;
             top: 30%;
-            left: 25%;
-            z-index: 1;
+            left: 22%;
             opacity: 1;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
-            transform: translate(calc(-20% + calc(200px * var(--i))),-30%) rotate(0deg) skew(0deg,0deg);
+            box-shadow: 10px 15px 10px rgba(0,0,0,0.2);
+            transform: rotate(0deg) skew(0deg,0deg);
+            margin-left: calc(15.5% * var(--i));
+            .content {
+                opacity: 1;
+                transform: translateY(0px);
+                transition-delay: calc(0.4s * var(--j));
+                &-inner {
+                    .percent {
+                        .progressbar {
+                            animation: progress 3s linear;
+                            animation-delay: 0.5s;
+                        }
+                    }
+                }
+            }
         }
-        &:hover .card .content {
-            opacity: 1;
-            transform: translateY(0px);
-            transition-delay: calc(0.4s * var(--j));
-        }
-        
-        
     }
     svg {
-        position: relative;
         width: 150px;
         height: 150px;
-        z-index: 1000;
     }
     svg circle {
-        width: 100%;
-        height: 100%;
         fill: none;
         stroke: #445561;
         stroke-width: 10;
@@ -454,11 +449,13 @@ body {
         stroke-dasharray: 440;
         stroke-dashoffset: 440;
     }
+    .progressbar-middle {
+        display: none;
+    }
 }
 
 .projects {
     padding: 15px 32px 48px;
-    background: $bg-color;
     z-index: 4;
     overflow: hidden;
     &-title {
@@ -501,7 +498,7 @@ body {
             overflow: hidden;
             &-info {
                 margin: 3px 0 8px;
-                color: #000;
+                color: #fff;
                 font-size: 20px;
                 font-weight: 300;
                 text-align: center;
@@ -678,6 +675,28 @@ body {
        
     }
 }
+@keyframes progress {
+    0% {
+        stroke-dashoffset: -420;
+        stroke-dasharray: -20;
+    }
+    40% {
+
+        stroke-dashoffset: -320;
+        stroke-dasharray: -240;
+    }
+    80% {
+
+        stroke-dashoffset: -220;
+        stroke-dasharray: -340;
+    }
+    100% {
+
+        stroke-dashoffset: 0;
+        stroke-dasharray: -440;
+       
+    }
+}
 @keyframes icon3d {
     0% {
       text-shadow: 5px 4px $FooterColor1, -5px -6px $FooterColor2;
@@ -709,7 +728,8 @@ body {
         width: 40%;
     }
 }
-@media screen and (max-width:768px) {
+@media only screen and (min-width: 0) 
+and (max-width: 768px) {
     .header-box-items {
         position: absolute;
         right: 0;
@@ -729,6 +749,14 @@ body {
         } 
     }
     }
+    .header {
+        &-box {
+            padding: 0 30px;
+            &-logo a {
+                font-size: 20px;
+            }
+        }
+    }
     .header-box .burger {
         display: block;
     }
@@ -738,7 +766,7 @@ body {
     }
     .sticky .header-box-items {
         background: $secondary-color;
-    } 
+    }
     .about {
         padding: 120px 0 0 0;
         &-title {
@@ -766,19 +794,113 @@ body {
         .container {
             overflow: hidden;
             .card {
-            transform: translate(-50%,calc(50px * var(--i))) rotate(40deg) skew(-20deg,-10deg);
-            width: 100px;
+            top: 10%;
+            transform: translate(-50%,calc(45px * var(--i))) rotate(40deg) skew(-20deg,-10deg);
             height: 200px;
+            &:nth-child(-n+6) {
+                transition: 0;
+                &:hover {
+                    z-index: 99;
+                    transform: scale(1.15);
+                }
+            }
+            .content {
+                &-inner {
+                    .percent {
+                        width: 90px;
+                        height: 90px;
+                        .number {
+                            h2 {
+                                font-size: 32px;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            &:nth-child(1) {
+                svg circle:nth-child(4) {
+                    stroke: #DD4B25;
+                    
+                    stroke-dasharray: calc(635 - (635  * 85) / 100);
+                }
+            }
+            &:nth-child(2) {
+                svg circle:nth-child(4) {
+                    stroke: #00a1ff;
+                    stroke-dasharray: calc(635 - (635 * 75) / 100);
+                }
+            }
+            &:nth-child(3) {
+                svg circle:nth-child(4) {
+                    stroke: #E5A228;
+                    stroke-dasharray: calc(500 - (500 * 20) / 100);
+                    stroke-dashoffset: calc(440 - (440 * 20) / 100);
+                }
+            }
+            &:nth-child(4) {
+                svg circle:nth-child(4) {
+                    stroke: #171516;
+                    stroke-dasharray: calc(440 - (440 * 70) / 100);
+                }
+            }
+            &:nth-child(5) {
+                svg circle:nth-child(4) {
+                    stroke: #634F96;
+                    stroke-dasharray: calc(635 - (635 * 40) / 100);
+                    stroke-dashoffset: calc(440 - (440 * 40) / 100);
+                }
+            }
+            &:nth-child(6) {
+                svg circle:nth-child(4) {
+                    stroke: #CA4545;
+                    stroke-dasharray: calc(600 - (600 * 35) / 100);
+                    stroke-dashoffset: calc(440 - (440 * 35) / 100);
+                }
+            }
             }
             &:hover .card {
-                top: 30%;
+                top: 5%;
                 left: 20%;
-                transform: translate(calc(-20% + calc(101px * var(--i))),-30%) rotate(0deg) skew(0deg,0deg);
             }
-            .percent {
-                width: 100px;
-                height: 100px;
+        }
+        
+        &:hover .card {
+            .content {
+                &-inner {
+                    .inner-text {
+                        font-size: 15px;
+                    }
+                    .percent {
+                        .progressbar-middle {
+                            animation: progress 3s linear;
+                            animation-delay: 0.5s;
+                            display: block;
+                        }
+                    }
+                }
             }
+        }
+        svg {
+            position: relative;
+            width: 100px;
+            height: 100px;
+        }
+        svg circle {
+            width: 100%;
+            height: 100%;
+            fill: none;
+            stroke: #445561;
+            stroke-width: 5;
+            stroke-linecap: round;
+            transform: translate(5px, 5px);
+        }
+        svg circle:nth-child(2) {
+            stroke-dasharray: 1600;
+            stroke-dashoffset: 1600;
+        }
+        .progressbar {
+            display: none;
         }
     }
     .projects {
