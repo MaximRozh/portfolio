@@ -5,3 +5,30 @@ $border-color: #FF3E38;
 
 $FooterColor1: rgba(244,67,54,1);
 $FooterColor2:#2196f3;
+@mixin display-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin healine-mobile {
+    width: 60%;
+    font-size: 34px;
+}
+$fz-text-mobile: 18px;
+@mixin healine-desktop {
+    width: 20%;
+    font-size: 38px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 2px solid $border-color;
+}
+$padding-desktop: 40px 35px;
+$fz-text-desktop: 22px;
+@mixin healine-tablet {
+    width: 30%;
+    font-size: 35px;
+}
+$fz-text-tablet: 24px;
+$padding-tablet: 40px 30px;

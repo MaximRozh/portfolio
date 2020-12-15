@@ -21,7 +21,7 @@ document.addEventListener('scroll', function (e) {
     var offset = window.pageYOffset;
     scroll = offset;
     montwo.style.width = (100 + scroll/5) + '%';
-    text.style.top = - scroll/8 + '%';
+    text.style.top = - scroll/6 + '%';
 });
 
 //header/////////////////////
@@ -47,17 +47,8 @@ document.body.onload = function() {
 }
 
 //burger 
-const navSlide = () => {
-    const burger = document.querySelector('.burger');
-    const nav = document.querySelector('.header-box-items');
-    const navLinks = document.querySelectorAll('.header-box-items li');
-
-    burger.addEventListener('click', () => {
-
-    nav.classList.toggle('header-active-bureger');
-
+$(document).ready(function() {
+    $('.burger').click(function(event) {
+        $('.burger, .header-box-items').toggleClass('active');
+    });
 });
-}
-navSlide();
-
-//scroll
