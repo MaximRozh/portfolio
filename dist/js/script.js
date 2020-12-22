@@ -52,3 +52,18 @@ $(document).ready(function() {
         $('.burger, .header-box-items').toggleClass('active');
     });
 });
+//scroll to top
+var btn = $('#buttonTop');
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 250) {
+    btn.addClass('show');
+  } else {
+    btn.removeClass('show');
+  }
+});
+btn.on('click', function(e) {
+  e.preventDefault();
+  $('html, body').animate({scrollTop:0}, '300');
+});
+

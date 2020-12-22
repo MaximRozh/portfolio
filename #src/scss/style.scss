@@ -1,14 +1,11 @@
 @import 'var.scss';
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-}
+@import 'reset.scss';
+
 body {
     font-family: 'Poppins', sans-serif;
     color: $font-color;
     background: $bg-color;
+    line-height: 1.5;
 }
 /**************preloader****************/
 
@@ -54,12 +51,47 @@ body {
     opacity: 0;
     visibility: hidden;
 }
+.topBtn {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    transition: all 0.4s linear;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+    &:after {
+        content: "\f077";
+        font-family: FontAwesome;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 35px;
+        line-height: 45px;
+        color: #fff;
+      }
+      &:hover {
+        cursor: pointer;
+        background-color: $secondary-color;
+      }
+  }
+  .show {
+        opacity: 1;
+        visibility: visible;
+      }
+  
+ 
+  
+  
+  
 /**************header****************/
 .sticky {
-    background: rgba(83, 101, 125, 0.9);
+    background: $secondary-color;
     opacity: 0.95;
     transition: all 1.5s linear;
-    filter: drop-shadow(rgba(83, 101, 125, 0.8) 0px 8px 10px);
+    filter: drop-shadow(rgba(83, 101, 125, 0.8) 0px 8px 9px);
     .header-links a, 
     .header-box-logo a {
         color: #E2e3d5;
@@ -88,7 +120,6 @@ body {
         &-items {
             display: flex;
             li {
-                list-style: none;
                 margin: 0 0 0 45px;
                 a {
                     position: relative;
@@ -172,7 +203,7 @@ body {
     padding: $padding-desktop;
     &-title {
         @include display-center;
-        .h1 {
+        .headline {
            @include healine-desktop;
         }
     }
@@ -197,6 +228,7 @@ body {
         @include display-center;
         padding: 35px 0;
         font-size: $fz-text-desktop;
+        text-align: justify;
         .rocket {
             align-self: start;
             position: relative;
@@ -212,10 +244,11 @@ body {
                 background: linear-gradient(#34A997,transparent);
                 filter: blur(20px);
             }
-            &-light {
+            &:before {
+                content: "";
                     position: absolute;
                     bottom: -195px;
-                    left: 44%;
+                    left: 50%;
                     transform: translateX(-50%);
                     width: 10px;
                     height: 200px;
@@ -231,7 +264,7 @@ body {
     padding: $padding-desktop;
         &-title {
             padding: 0 0 20px 0;
-            .h1 {
+            .headline {
                 @include healine-desktop;
             }
         }
@@ -255,7 +288,6 @@ body {
             box-shadow: 25px 25px 25px rgba(0,0,0,0.2);
             z-index: calc(-1 * var(--i));
             transition: 1s;
-
             &:nth-child(1) {
                 opacity: 1;
                 transition: 1.5s;
@@ -410,7 +442,7 @@ body {
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        .h1 {
+        .headline {
             @include healine-desktop;
         }
     }
@@ -528,8 +560,23 @@ body {
     &-title {
         padding-bottom: 10px;
         @include display-center;
-        .h1 {
+        .headline {
             @include healine-desktop;
+        }
+    }
+    &-container {
+        @include display-center;
+        flex-direction: column;
+    }
+    &-text {
+        text-align: center;
+        padding: 15px 0 15px 0;
+    }
+    &-email {
+        font-size: 24px;
+        border-bottom: 1px solid $font-color;
+        a {
+            color: $font-color;
         }
     }
     &-description {
@@ -668,7 +715,7 @@ and (max-width: 1024px) {
         li { 
             a {
             margin: 0;
-            padding: 10px 200px 10px 200px;
+            padding: 10px 200px 10px 160px;
             font-size: 28px;
             &:hover,
             &:focus {
@@ -764,12 +811,13 @@ and (max-width: 1024px) {
         }
         &-title {
             padding: 20px 0 0 0;
-            .h1 {
+            .headline {
                 @include healine-tablet;
             }
         }
         &-text {
             padding: 25px 0;
+            text-align: left;
             .text {
                 font-size: $fz-text-tablet;
                 margin: 0 20px 0 0;
@@ -782,7 +830,7 @@ and (max-width: 1024px) {
     .skills {
         padding: $padding-tablet;
         &-title {
-            .h1{
+            .headline{
                 @include healine-tablet;
             }
         }
@@ -816,7 +864,7 @@ and (max-width: 1024px) {
         padding: $padding-tablet;
         &-title {
             padding: 16px 0 30px;
-            .h1 {
+            .headline {
                 @include healine-tablet;
             }
         }
@@ -848,8 +896,17 @@ and (max-width: 1024px) {
         padding: $padding-tablet;
         &-title {
             padding: 16px 0 30px;
-            .h1 {
+            .headline {
                 @include healine-tablet;
+            }
+        }
+        &-text {
+            font-size: $fz-text-mobile;
+        }
+        &-email {
+            font-size: 22px;
+            a {
+                color: $font-color;
             }
         }
     }
@@ -863,7 +920,7 @@ and (max-width: 767px) {
         transform: translateY(-100%); 
         li { 
             a {
-            padding: 10px 360px 10px 360px;
+            padding: 10px 360px 10px 320px;
             font-size: 25px;
           }
         }
@@ -906,7 +963,7 @@ and (max-width: 767px) {
         &-title {
             padding: 10px 0 10px;
             font-size: 24px;
-            .h1 {
+            .headline {
                 @include healine-mobile;
             }
         }
@@ -921,7 +978,7 @@ and (max-width: 767px) {
     .skills {
         padding: 0 20px;
         &-title {
-            .h1{
+            .headline {
                 @include healine-mobile;
             }
         }
@@ -1045,7 +1102,7 @@ and (max-width: 767px) {
         padding: 40px 16px 24px;
         &-title {
             padding: 16px 0 30px;
-            .h1 {
+            .headline {
                 @include healine-mobile;
             }
         }
@@ -1057,7 +1114,7 @@ and (max-width: 767px) {
         padding: 20px 20px;
         &-title {
             padding: 16px 0 30px;
-            .h1 {
+            .headline {
                 @include healine-mobile;
             }
         }

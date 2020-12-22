@@ -1,14 +1,150 @@
-* {
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  text-decoration: none;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 body {
   font-family: 'Poppins', sans-serif;
   color: #fff;
   background: #1F2437;
+  line-height: 1.5;
 }
 
 /**************preloader****************/
@@ -62,13 +198,47 @@ body {
   visibility: hidden;
 }
 
+.topBtn {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  transition: all 0.4s linear;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+
+.topBtn:after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 35px;
+  line-height: 45px;
+  color: #fff;
+}
+
+.topBtn:hover {
+  cursor: pointer;
+  background-color: #53657D;
+}
+
+.show {
+  opacity: 1;
+  visibility: visible;
+}
+
 /**************header****************/
 
 .sticky {
-  background: rgba(83, 101, 125, 0.9);
+  background: #53657D;
   opacity: 0.95;
   transition: all 1.5s linear;
-  filter: drop-shadow(rgba(83, 101, 125, 0.8) 0px 8px 10px);
+  filter: drop-shadow(rgba(83, 101, 125, 0.8) 0px 8px 9px);
 }
 
 .sticky .header-links a,
@@ -108,7 +278,6 @@ body {
 }
 
 .header-box-items li {
-  list-style: none;
   margin: 0 0 0 45px;
 }
 
@@ -208,7 +377,7 @@ body {
   align-items: center;
 }
 
-.about-title .h1 {
+.about-title .headline {
   width: 20%;
   font-size: 38px;
   font-weight: 400;
@@ -247,6 +416,7 @@ body {
   align-items: center;
   padding: 35px 0;
   font-size: 22px;
+  text-align: justify;
 }
 
 .about-text .rocket {
@@ -268,10 +438,11 @@ body {
   filter: blur(20px);
 }
 
-.about-text .rocket-light {
+.about-text .rocket:before {
+  content: "";
   position: absolute;
   bottom: -195px;
-  left: 44%;
+  left: 50%;
   transform: translateX(-50%);
   width: 10px;
   height: 200px;
@@ -289,7 +460,7 @@ body {
   padding: 0 0 20px 0;
 }
 
-.skills-title .h1 {
+.skills-title .headline {
   width: 20%;
   font-size: 38px;
   font-weight: 400;
@@ -505,7 +676,7 @@ body {
   align-items: center;
 }
 
-.projects-title .h1 {
+.projects-title .headline {
   width: 20%;
   font-size: 38px;
   font-weight: 400;
@@ -646,13 +817,34 @@ body {
   align-items: center;
 }
 
-.footer-title .h1 {
+.footer-title .headline {
   width: 20%;
   font-size: 38px;
   font-weight: 400;
   text-transform: uppercase;
   text-align: center;
   border-bottom: 2px solid #FF3E38;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer-text {
+  text-align: center;
+  padding: 15px 0 15px 0;
+}
+
+.footer-email {
+  font-size: 24px;
+  border-bottom: 1px solid #fff;
+}
+
+.footer-email a {
+  color: #fff;
 }
 
 .footer-description {
@@ -908,7 +1100,7 @@ body {
 
   .header-box-items li a {
     margin: 0;
-    padding: 10px 200px 10px 200px;
+    padding: 10px 200px 10px 160px;
     font-size: 28px;
   }
 
@@ -1018,13 +1210,14 @@ body {
     padding: 20px 0 0 0;
   }
 
-  .about-title .h1 {
+  .about-title .headline {
     width: 30%;
     font-size: 35px;
   }
 
   .about-text {
     padding: 25px 0;
+    text-align: left;
   }
 
   .about-text .text {
@@ -1040,7 +1233,7 @@ body {
     padding: 40px 30px;
   }
 
-  .skills-title .h1 {
+  .skills-title .headline {
     width: 30%;
     font-size: 35px;
   }
@@ -1078,7 +1271,7 @@ body {
     padding: 16px 0 30px;
   }
 
-  .projects-title .h1 {
+  .projects-title .headline {
     width: 30%;
     font-size: 35px;
   }
@@ -1113,9 +1306,21 @@ body {
     padding: 16px 0 30px;
   }
 
-  .footer-title .h1 {
+  .footer-title .headline {
     width: 30%;
     font-size: 35px;
+  }
+
+  .footer-text {
+    font-size: 18px;
+  }
+
+  .footer-email {
+    font-size: 22px;
+  }
+
+  .footer-email a {
+    color: #fff;
   }
 }
 
@@ -1126,7 +1331,7 @@ body {
   }
 
   .header-box-items li a {
-    padding: 10px 360px 10px 360px;
+    padding: 10px 360px 10px 320px;
     font-size: 25px;
   }
 
@@ -1175,7 +1380,7 @@ body {
     font-size: 24px;
   }
 
-  .about-title .h1 {
+  .about-title .headline {
     width: 60%;
     font-size: 34px;
   }
@@ -1193,7 +1398,7 @@ body {
     padding: 0 20px;
   }
 
-  .skills-title .h1 {
+  .skills-title .headline {
     width: 60%;
     font-size: 34px;
   }
@@ -1314,7 +1519,7 @@ body {
     padding: 16px 0 30px;
   }
 
-  .projects-title .h1 {
+  .projects-title .headline {
     width: 60%;
     font-size: 34px;
   }
@@ -1331,7 +1536,7 @@ body {
     padding: 16px 0 30px;
   }
 
-  .footer-title .h1 {
+  .footer-title .headline {
     width: 60%;
     font-size: 34px;
   }
