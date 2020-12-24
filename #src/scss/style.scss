@@ -145,7 +145,7 @@ body {
 /**************parallax****************/
 .hero {
     position: relative;
-    background: url(../img/marek-piwnicki-ooxzy4JN6gw-unsplash.jpg);
+    background: url(../img/background.jpg);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -281,6 +281,7 @@ body {
             left: 50%;
             transform: translate(-50%,calc(90px * var(--i))) rotate(40deg) skew(-20deg,-10deg);
             width: 13.5%;
+            max-width: 200px;
             height: 250px;
             border-radius: 5px;
             background: $secondary-color;
@@ -713,9 +714,11 @@ and (max-width: 1024px) {
         transition: transform 0.8s linear;
         overflow: hidden;
         li { 
-            a {
+            width: 100%;
             margin: 0;
-            padding: 10px 200px 10px 160px;
+            text-align: center;
+            a {
+            width: 100%;
             font-size: 28px;
             &:hover,
             &:focus {
@@ -844,6 +847,13 @@ and (max-width: 1024px) {
                 top: 25%;
                 transform: translate(-50%,calc(65px * var(--i))) rotate(40deg) skew(-20deg,-10deg);
                 width: 15%;
+                &:nth-child(-n+6) {
+                    transition: 0;
+                    &:hover {
+                        z-index: 99;
+                        transform: scale(1.1);
+                    }
+                }
                 .content {
                     &-inner {
                         .inner-text {
@@ -920,7 +930,6 @@ and (max-width: 767px) {
         transform: translateY(-100%); 
         li { 
             a {
-            padding: 10px 360px 10px 320px;
             font-size: 25px;
           }
         }
@@ -993,9 +1002,7 @@ and (max-width: 767px) {
             transform: translate(-50%,calc(45px * var(--i))) rotate(40deg) skew(-20deg,-10deg);
             height: 200px;
             &:nth-child(-n+6) {
-                transition: 0;
                 &:hover {
-                    z-index: 99;
                     transform: scale(1.2);
                 }
             }
