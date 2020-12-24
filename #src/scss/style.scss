@@ -106,7 +106,7 @@ body {
     position: fixed;
     transition: all 2s ease;
     padding: 5px 0;
-    z-index: 999;
+    z-index: 1001;
     &-box {
         display: flex;
         align-items: center;
@@ -145,7 +145,7 @@ body {
 /**************parallax****************/
 .hero {
     position: relative;
-    background: url(../img/marek-piwnicki-ooxzy4JN6gw-unsplash.jpg);
+    background: url(../img/background.jpg);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -713,9 +713,11 @@ and (max-width: 1024px) {
         transition: transform 0.8s linear;
         overflow: hidden;
         li { 
-            a {
+            width: 100%;
             margin: 0;
-            padding: 10px 200px 10px 160px;
+            text-align: center;
+            a {
+            width: 100%;
             font-size: 28px;
             &:hover,
             &:focus {
@@ -920,7 +922,6 @@ and (max-width: 767px) {
         transform: translateY(-100%); 
         li { 
             a {
-            padding: 10px 360px 10px 320px;
             font-size: 25px;
           }
         }
