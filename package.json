@@ -17,7 +17,8 @@
     "gulp-group-css-media-queries": "^1.2.2",
     "gulp-imagemin": "^7.1.0",
     "gulp-sass": "^4.1.0",
-    "gulp-uglify-es": "^2.0.0"
+    "gulp-uglify-es": "^2.0.0",
+    "gulp-webp": "^4.0.1"
   },
   "dependencies": {
     "gulp-rename": "^2.0.0"

@@ -52,6 +52,9 @@ $(document).ready(function() {
         $('.burger, .header-box-items').toggleClass('active');
     });
 });
+$( '.header-box-items .header-links' ).on("click", function(){
+    $('.burger, .header-box-items').removeClass('active');
+  });
 //scroll to top
 var btn = $('#buttonTop');
 

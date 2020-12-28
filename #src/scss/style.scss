@@ -104,9 +104,8 @@ body {
 .header {
     width: 100%;
     position: fixed;
-    transition: all 2s ease;
     padding: 5px 0;
-    z-index: 999;
+    z-index: 1001;
     &-box {
         display: flex;
         align-items: center;
@@ -114,7 +113,7 @@ body {
         padding: 0 60px;
         &-logo a {
             font-size: 30px;
-            font-weight: 600;
+            font-weight: 700;
             color: #cccccc;   
         }
         &-items {
@@ -122,9 +121,7 @@ body {
             li {
                 margin: 0 0 0 45px;
                 a {
-                    position: relative;
                     display: inline-block;
-                    overflow: hidden;
                     font-weight: bold;
                     color: #b0b2b3;
                     font-size: 18px;
@@ -145,7 +142,7 @@ body {
 /**************parallax****************/
 .hero {
     position: relative;
-    background: url(../img/marek-piwnicki-ooxzy4JN6gw-unsplash.jpg);
+    background-image: url(../img/background.jpg);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -170,15 +167,12 @@ body {
     }
     .parallax {
         height: 100vh;
-        padding: 0 0 60% 0;
         overflow: hidden;
         position: relative;
         img {
             width: 100%;
             height: 100%;
-            object-fit: fill;
             position: absolute;
-            mix-blend-mode: luminosity;
         }
         .parallax-mountain-one {
             right: 40%;
@@ -191,8 +185,10 @@ body {
             transform: translateX(40%);
         }
         .parallax-text {
-            right: -3%;
-            transform: translateY(60%);
+            width: 80%;
+            right: 8%;
+            transform: translateY(73%);
+            height: 87%;
         }
 
     }
@@ -281,6 +277,7 @@ body {
             left: 50%;
             transform: translate(-50%,calc(90px * var(--i))) rotate(40deg) skew(-20deg,-10deg);
             width: 13.5%;
+            max-width: 205px;
             height: 250px;
             border-radius: 5px;
             background: $secondary-color;
@@ -340,7 +337,6 @@ body {
             .content {
                 opacity: 0;
                 transform: translateY(50px);
-                padding: 25px;
                 transition: 2s;
                 &-inner {
                     text-align: center;
@@ -359,11 +355,13 @@ body {
                     }
                     .percent {
                         position: relative;
-                        width: 150px;
                         height: 150px;
-                        border-radius: 50%;
                         box-shadow:  inset 0 0 50px #000;
                         background: #445561;
+                        border-radius: 50%;
+                        &:hover {
+                            background: $secondary-color;
+                        }
                         .number {
                             position: absolute;
                             top: 0;
@@ -436,7 +434,6 @@ body {
 
 .projects {
     padding: $padding-desktop;
-    overflow: hidden;
     &-title {
         padding: 0 0 40px 0;
         display: flex;
@@ -569,8 +566,9 @@ body {
         flex-direction: column;
     }
     &-text {
-        text-align: center;
+        font-size: 18px;
         padding: 15px 0 15px 0;
+        text-align: center;
     }
     &-email {
         font-size: 24px;
@@ -713,10 +711,14 @@ and (max-width: 1024px) {
         transition: transform 0.8s linear;
         overflow: hidden;
         li { 
-            a {
+            width: 100%;
             margin: 0;
-            padding: 10px 200px 10px 160px;
+            text-align: center;
+            a {
+            width: 100%;
             font-size: 28px;
+            position: relative;
+            overflow: hidden;
             &:hover,
             &:focus {
               outline:0;
@@ -804,8 +806,18 @@ and (max-width: 1024px) {
             
         }
     }
+    .hero {
+        .parallax {
+            .parallax-text {
+            height: 100%;
+            width: 90%;
+            right: 0;
+            transform: translateY(60%);
+            }
+        }
+    }
     .about {
-        padding: 70px 30px;
+        padding: $padding-tablet;
         &-description  {
             font-size: 28px;
         }
@@ -920,7 +932,6 @@ and (max-width: 767px) {
         transform: translateY(-100%); 
         li { 
             a {
-            padding: 10px 360px 10px 320px;
             font-size: 25px;
           }
         }
@@ -959,7 +970,7 @@ and (max-width: 767px) {
     }
     
     .about {
-        padding: 100px 20px;
+        padding: $padding-mobile;
         &-title {
             padding: 10px 0 10px;
             font-size: 24px;
@@ -976,7 +987,7 @@ and (max-width: 767px) {
         }
     }
     .skills {
-        padding: 0 20px;
+        padding: $padding-mobile;
         &-title {
             .headline {
                 @include healine-mobile;
@@ -1099,7 +1110,7 @@ and (max-width: 767px) {
         }
     }
     .projects {
-        padding: 40px 16px 24px;
+        padding: $padding-mobile;
         &-title {
             padding: 16px 0 30px;
             .headline {

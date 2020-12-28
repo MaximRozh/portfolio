@@ -79,7 +79,7 @@ let path = {
         .pipe(
             autoprefixer(
                 {
-                    overrideBrowserlist: ["last 5 versions"],
+                    overrideBrowserslist: ["last 30 versions"],
                     cascade: true
                 }
             )
