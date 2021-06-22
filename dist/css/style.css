@@ -167,8 +167,11 @@ body {
 
 .preloader .loader {
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .preloader .loader:before {
@@ -384,9 +387,7 @@ body {
 .hero .parallax .parallax-mountain-two {
   top: 18%;
   z-index: 10;
-  -webkit-transform: translateX(40%);
-      -ms-transform: translateX(40%);
-          transform: translateX(40%);
+  left: 40%;
 }
 
 .hero .parallax .parallax-text {
@@ -583,17 +584,23 @@ body {
   transition: 1s;
 }
 
+.skills .container .card .progressbar {
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transition: stroke-dashoffset 3s;
+  -o-transition: stroke-dashoffset 3s;
+  transition: stroke-dashoffset 3s;
+}
+
 .skills .container .card:nth-child(1) {
   opacity: 1;
   -webkit-transition: 1.5s;
   -o-transition: 1.5s;
   transition: 1.5s;
-}
-
-.skills .container .card:nth-child(1) svg circle:nth-child(2) {
-  stroke: #DD4B25;
-  stroke-dashoffset: -webkit-calc(440 - (440 * 85) / 100);
-  stroke-dashoffset: calc(440 - (440 * 85) / 100);
 }
 
 .skills .container .card:nth-child(2) {
@@ -603,23 +610,11 @@ body {
   transition: 2s;
 }
 
-.skills .container .card:nth-child(2) svg circle:nth-child(2) {
-  stroke: #00a1ff;
-  stroke-dashoffset: -webkit-calc(440 - (440 * 75) / 100);
-  stroke-dashoffset: calc(440 - (440 * 75) / 100);
-}
-
 .skills .container .card:nth-child(3) {
   opacity: 0.6;
   -webkit-transition: 2.5s;
   -o-transition: 2.5s;
   transition: 2.5s;
-}
-
-.skills .container .card:nth-child(3) svg circle:nth-child(2) {
-  stroke: #E5A228;
-  stroke-dashoffset: -webkit-calc(440 - (440 * 20) / 100);
-  stroke-dashoffset: calc(440 - (440 * 20) / 100);
 }
 
 .skills .container .card:nth-child(4) {
@@ -629,12 +624,6 @@ body {
   transition: 3s;
 }
 
-.skills .container .card:nth-child(4) svg circle:nth-child(2) {
-  stroke: #171516;
-  stroke-dashoffset: -webkit-calc(440 - (440 * 50) / 100);
-  stroke-dashoffset: calc(440 - (440 * 50) / 100);
-}
-
 .skills .container .card:nth-child(5) {
   opacity: 0;
   -webkit-transition: 3.5s;
@@ -642,23 +631,11 @@ body {
   transition: 3.5s;
 }
 
-.skills .container .card:nth-child(5) svg circle:nth-child(2) {
-  stroke: #634F96;
-  stroke-dashoffset: -webkit-calc(440 - (440 * 40) / 100);
-  stroke-dashoffset: calc(440 - (440 * 40) / 100);
-}
-
 .skills .container .card:nth-child(6) {
   opacity: 0;
   -webkit-transition: 4s;
   -o-transition: 4s;
   transition: 4s;
-}
-
-.skills .container .card:nth-child(6) svg circle:nth-child(2) {
-  stroke: #CA4545;
-  stroke-dashoffset: -webkit-calc(440 - (440 * 35) / 100);
-  stroke-dashoffset: calc(440 - (440 * 35) / 100);
 }
 
 .skills .container .card .content {
@@ -685,7 +662,7 @@ body {
 }
 
 .skills .container .card .content-inner .inner-text {
-  color: #272B36;
+  color: white;
   position: relative;
   margin: 20px 0 0 0;
   font-weight: 700;
@@ -694,16 +671,29 @@ body {
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
+  opacity: 0;
 }
 
 .skills .container .card .content-inner .percent {
+  width: auto;
   position: relative;
-  height: 150px;
   -webkit-box-shadow: inset 0 0 50px #000;
           box-shadow: inset 0 0 50px #000;
   background: #445561;
   -webkit-border-radius: 50%;
           border-radius: 50%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .skills .container .card .content-inner .percent:hover {
@@ -712,10 +702,6 @@ body {
 
 .skills .container .card .content-inner .percent .number {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -774,35 +760,15 @@ body {
           transition-delay: calc(0.4s * var(--j));
 }
 
-.skills .container:hover .card .content-inner .percent .progressbar {
-  -webkit-animation: progress 3s linear;
-          animation: progress 3s linear;
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
-}
-
-.skills svg {
-  width: 150px;
-  height: 150px;
+.skills .container:hover .card .content-inner .inner-text {
+  opacity: 1;
+  -webkit-transition-delay: -webkit-calc(0.6s * var(--j));
+       -o-transition-delay: calc(0.6s * var(--j));
+          transition-delay: calc(0.6s * var(--j));
 }
 
 .skills svg circle {
-  fill: none;
-  stroke: #445561;
   stroke-width: 10;
-  stroke-linecap: round;
-  -webkit-transform: translate(5px, 5px);
-      -ms-transform: translate(5px, 5px);
-          transform: translate(5px, 5px);
-}
-
-.skills svg circle:nth-child(2) {
-  stroke-dasharray: 440;
-  stroke-dashoffset: 440;
-}
-
-.skills .progressbar-middle {
-  display: none;
 }
 
 .projects {
@@ -1208,50 +1174,6 @@ body {
     stroke-dashoffset: 1300;
     fill: #B3C4CA;
     stroke: #444;
-  }
-}
-
-@-webkit-keyframes progress {
-  0% {
-    stroke-dashoffset: -420;
-    stroke-dasharray: -20;
-  }
-
-  40% {
-    stroke-dashoffset: -320;
-    stroke-dasharray: -240;
-  }
-
-  80% {
-    stroke-dashoffset: -220;
-    stroke-dasharray: -340;
-  }
-
-  100% {
-    stroke-dashoffset: 0;
-    stroke-dasharray: -440;
-  }
-}
-
-@keyframes progress {
-  0% {
-    stroke-dashoffset: -420;
-    stroke-dasharray: -20;
-  }
-
-  40% {
-    stroke-dashoffset: -320;
-    stroke-dasharray: -240;
-  }
-
-  80% {
-    stroke-dashoffset: -220;
-    stroke-dasharray: -340;
-  }
-
-  100% {
-    stroke-dashoffset: 0;
-    stroke-dasharray: -440;
   }
 }
 
@@ -1700,6 +1622,10 @@ body {
             transform: scale(1.2);
   }
 
+  .skills .container .card .content-inner .inner-text {
+    font-size: 15px;
+  }
+
   .skills .container .card .content-inner .percent {
     width: 90px;
     height: 90px;
@@ -1709,55 +1635,9 @@ body {
     font-size: 32px;
   }
 
-  .skills .container .card:nth-child(1) svg circle:nth-child(4) {
-    stroke: #DD4B25;
-    stroke-dasharray: -webkit-calc(635 - (635  * 85) / 100);
-    stroke-dasharray: calc(635 - (635  * 85) / 100);
-  }
-
-  .skills .container .card:nth-child(2) svg circle:nth-child(4) {
-    stroke: #00a1ff;
-    stroke-dasharray: -webkit-calc(635 - (635 * 75) / 100);
-    stroke-dasharray: calc(635 - (635 * 75) / 100);
-  }
-
-  .skills .container .card:nth-child(3) svg circle:nth-child(4) {
-    stroke: #E5A228;
-    stroke-dasharray: -webkit-calc(500 - (500 * 20) / 100);
-    stroke-dasharray: calc(500 - (500 * 20) / 100);
-    stroke-dashoffset: -webkit-calc(440 - (440 * 20) / 100);
-    stroke-dashoffset: calc(440 - (440 * 20) / 100);
-  }
-
-  .skills .container .card:nth-child(4) svg circle:nth-child(4) {
-    stroke: #171516;
-    stroke-dasharray: -webkit-calc(440 - (440 * 70) / 100);
-    stroke-dasharray: calc(440 - (440 * 70) / 100);
-  }
-
-  .skills .container .card:nth-child(5) svg circle:nth-child(4) {
-    stroke: #634F96;
-    stroke-dasharray: -webkit-calc(635 - (635 * 40) / 100);
-    stroke-dasharray: calc(635 - (635 * 40) / 100);
-    stroke-dashoffset: -webkit-calc(440 - (440 * 40) / 100);
-    stroke-dashoffset: calc(440 - (440 * 40) / 100);
-  }
-
-  .skills .container .card:nth-child(6) svg circle:nth-child(4) {
-    stroke: #CA4545;
-    stroke-dasharray: -webkit-calc(600 - (600 * 35) / 100);
-    stroke-dasharray: calc(600 - (600 * 35) / 100);
-    stroke-dashoffset: -webkit-calc(440 - (440 * 35) / 100);
-    stroke-dashoffset: calc(440 - (440 * 35) / 100);
-  }
-
   .skills .container:hover .card {
     top: 15%;
     left: 20%;
-  }
-
-  .skills:hover .card .content-inner .inner-text {
-    font-size: 15px;
   }
 
   .skills:hover .card .content-inner .percent .progressbar-middle {
@@ -1777,22 +1657,8 @@ body {
   .skills svg circle {
     width: 100%;
     height: 100%;
-    fill: none;
     stroke: #445561;
     stroke-width: 5;
-    stroke-linecap: round;
-    -webkit-transform: translate(5px, 5px);
-        -ms-transform: translate(5px, 5px);
-            transform: translate(5px, 5px);
-  }
-
-  .skills svg circle:nth-child(2) {
-    stroke-dasharray: 1600;
-    stroke-dashoffset: 1600;
-  }
-
-  .skills .progressbar {
-    display: none;
   }
 
   .projects {

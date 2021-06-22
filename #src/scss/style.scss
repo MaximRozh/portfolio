@@ -22,8 +22,9 @@ body {
     visibility: visible;
     .loader { 
         position: absolute;
-        top: 50%;
+        top: 45%;
         left: 50%;
+        transform: translate(-50%, -50%);
         &:before {
             content: "";
             height: 40px;
@@ -33,8 +34,8 @@ body {
             position: absolute;
             top: 0;
             animation: loader 2s infinite linear;
-          }
-          &:after {
+        }
+        &:after {
             content: "";
             height: 40px;
             width: 40px;
@@ -43,7 +44,7 @@ body {
             position: absolute;
             top: 0;
             animation: loader2 2s infinite linear;
-          }
+        }
     }
 }
 .done {
@@ -70,21 +71,17 @@ body {
         font-size: 35px;
         line-height: 45px;
         color: #fff;
-      }
-      &:hover {
+    }
+    &:hover {
         cursor: pointer;
         background-color: $secondary-color;
-      }
-  }
-  .show {
+    }
+}
+.show {
         opacity: 1;
         visibility: visible;
-      }
-  
- 
-  
-  
-  
+    }
+
 /**************header****************/
 .sticky {
     background: $secondary-color;
@@ -184,7 +181,7 @@ body {
         .parallax-mountain-two {
             top: 18%;
             z-index: 10;
-            transform: translateX(40%);
+            left: 40%
         }
         .parallax-text {
             width: 80%;
@@ -202,7 +199,7 @@ body {
     &-title {
         @include display-center;
         .headline {
-           @include healine-desktop;
+            @include healine-desktop;
         }
     }
     &-description {
@@ -287,55 +284,35 @@ body {
             box-shadow: 25px 25px 25px rgba(0,0,0,0.2);
             z-index: calc(-1 * var(--i));
             transition: 1s;
+            .progressbar {
+                transform-origin: center;
+                transform: rotate(-90deg);
+                transition: stroke-dashoffset 3s;
+            }
             &:nth-child(1) {
                 opacity: 1;
                 transition: 1.5s;
-                svg circle:nth-child(2) {
-                    stroke: #DD4B25;
-                    stroke-dashoffset: calc(440 - (440 * 85) / 100);
-                }
             }
             &:nth-child(2) {
                 opacity: 0.8;
                 transition: 2s;
-                svg circle:nth-child(2) {
-                    stroke: #00a1ff;
-                    stroke-dashoffset: calc(440 - (440 * 75) / 100);
-                }
             }
             &:nth-child(3) {
                 opacity: 0.6;
                 transition: 2.5s;
-                svg circle:nth-child(2) {
-                    stroke: #E5A228;
-                    stroke-dashoffset: calc(440 - (440 * 20) / 100);
-                }
             }
             &:nth-child(4) {
                 opacity: 0;
                 transition: 3s;
-                svg circle:nth-child(2) {
-                    stroke: #171516;
-                    stroke-dashoffset: calc(440 - (440 * 50) / 100);
-                }
             }
             &:nth-child(5) {
                 opacity: 0;
                 transition: 3.5s;
-                svg circle:nth-child(2) {
-                    stroke: #634F96;
-                    stroke-dashoffset: calc(440 - (440 * 40) / 100);
-                }
             }
             &:nth-child(6) {
                 opacity: 0;
                 transition: 4s;
-                svg circle:nth-child(2) {
-                    stroke: #CA4545;
-                    stroke-dashoffset: calc(440 - (440 * 35) / 100);
-                }
             }
-           
             .content {
                 opacity: 0;
                 transform: translateY(50px);
@@ -347,29 +324,30 @@ body {
                     transform: translateY(-13px);
                     }
                     .inner-text {
-                        color: #272B36;
+                        color: white;
                         position: relative;
                         margin: 20px 0 0 0;
                         font-weight: 700;
                         font-size: 18px;
                         text-transform: uppercase;
                         transition: 0.5s;
+                        opacity: 0;
+                        
                     }
                     .percent {
+                        width: auto;
                         position: relative;
-                        height: 150px;
                         box-shadow:  inset 0 0 50px #000;
                         background: #445561;
                         border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
                         &:hover {
                             background: $secondary-color;
                         }
                         .number {
                             position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
                             @include display-center;
                             border-radius: 50%;
                             h2 {
@@ -383,6 +361,7 @@ body {
                     }
                 }
             }
+            
             &:hover .inner-text {
                 color: #dfeff9;
             }
@@ -404,33 +383,16 @@ body {
                 transform: translateY(0px);
                 transition-delay: calc(0.4s * var(--j));
                 &-inner {
-                    .percent {
-                        .progressbar {
-                            animation: progress 3s linear;
-                            animation-delay: 0.5s;
-                        }
+                    .inner-text {
+                        opacity: 1;
+                        transition-delay: calc(0.6s * var(--j));
                     }
                 }
             }
         }
     }
-    svg {
-        width: 150px;
-        height: 150px;
-    }
     svg circle {
-        fill: none;
-        stroke: #445561;
         stroke-width: 10;
-        stroke-linecap: round;
-        transform: translate(5px, 5px);
-    }
-    svg circle:nth-child(2) {
-        stroke-dasharray: 440;
-        stroke-dashoffset: 440;
-    }
-    .progressbar-middle {
-        display: none;
     }
 }
 
@@ -451,7 +413,7 @@ body {
         color: #fff;
         font-size: $fz-text-desktop;
         text-align: center;
-      }
+    }
     
     &-items {
         max-width: 1024px;
@@ -473,7 +435,7 @@ body {
                 font-size: 20px;
                 font-weight: 300;
                 text-align: center;
-              }
+            }
             &-thumbnail {
                 width: 100%;
                 height: 400px;
@@ -481,7 +443,7 @@ body {
                 transform: translateY(0%);
                 transition: all 1s linear;
                 z-index: 4;
-              }
+            }
             &:hover .projects-item-thumbnail {
                 transform: scale(1.6) translateY(120%);
                 }
@@ -513,7 +475,7 @@ body {
                     border-style: solid;
                     border-color: $border-color;
                     transition: all 1.5s linear;
-                  }
+                }
                 &:after {
                     content: "";
                     position: absolute;
@@ -527,21 +489,21 @@ body {
                     border-style: solid;
                     border-color: $border-color;
                     transition: all 1.5s linear;
-                  }
-                  &-title {
+                }
+                &-title {
                     margin: 24px 0 0;
                     color: #fff;
                     font-size: 30px;
                     font-weight: 400;
-                  }
-                  &-description {
+                }
+                &-description {
                     max-width: 70%;
                     margin: 24px auto 0;
                     color: #fff;
                     font-size: 20px;
                     font-weight: 300;
-                  }
-              }
+                }
+            }
             &:hover .projects-item-hover:before {
                 width: 65%;
                 height: 45%; 
@@ -551,7 +513,7 @@ body {
                 height: 45%;
             }       
         }
-      }
+    }
 }
 .footer {
     padding: $padding-desktop;
@@ -587,16 +549,15 @@ body {
         }
         .flex-center {
             @include display-center;
-          }
-          .icon-3d {
+        }
+        .icon-3d {
             padding: 10px;
             animation: icon3d 0.2s 10;
             color: #fff;
-          }
-          .icon-3d:hover {
+        }
+        .icon-3d:hover {
             animation: icon3d 0.2s infinite;
-          }
-          
+        }
 }
 
 
@@ -605,13 +566,13 @@ body {
     100% {
         transform: rotate(180deg) skew(360deg);
     }
-  } 
-  @keyframes loader2 {
+} 
+@keyframes loader2 {
     100% {
         transform: rotate(-180deg) skew(-360deg);
     }
-  }
-  @keyframes clouds {
+}
+@keyframes clouds {
     0% {
         transform: translateX(-100%);
     }
@@ -645,48 +606,25 @@ body {
         stroke-dashoffset: 1300;
         fill: #B3C4CA;
         stroke: #444;
-       
-    }
-}
-@keyframes progress {
-    0% {
-        stroke-dashoffset: -420;
-        stroke-dasharray: -20;
-    }
-    40% {
-
-        stroke-dashoffset: -320;
-        stroke-dasharray: -240;
-    }
-    80% {
-
-        stroke-dashoffset: -220;
-        stroke-dasharray: -340;
-    }
-    100% {
-
-        stroke-dashoffset: 0;
-        stroke-dasharray: -440;
-       
     }
 }
 @keyframes icon3d {
     0% {
-      text-shadow: 5px 4px $FooterColor1, -5px -6px $FooterColor2;
+    text-shadow: 5px 4px $FooterColor1, -5px -6px $FooterColor2;
     }
     25% {
-      text-shadow: -5px -6px $FooterColor1, 5px 4px $FooterColor2;
+    text-shadow: -5px -6px $FooterColor1, 5px 4px $FooterColor2;
     }
     50% {
-      text-shadow: 5px -4px $FooterColor1, -8px 4px $FooterColor2;
+    text-shadow: 5px -4px $FooterColor1, -8px 4px $FooterColor2;
     }
     75% {
-      text-shadow: -8px -4px $FooterColor1, -5px -4px $FooterColor2;
+    text-shadow: -8px -4px $FooterColor1, -5px -4px $FooterColor2;
     }
     100% {
-      text-shadow: -5px 0 #f44336, 5px -4px #2196f3;
+    text-shadow: -5px 0 #f44336, 5px -4px #2196f3;
     }
-  }
+}
 
 ::-webkit-scrollbar {
     width: 12px;
@@ -721,10 +659,10 @@ and (max-width: 1024px) {
             font-size: 28px;
             &:hover,
             &:focus {
-              outline:0;
-              background-color:rgba(0,0,0,0.3);
+            outline:0;
+            background-color:rgba(0,0,0,0.3);
             }
-          }
+        }
         }
     }
     .header {
@@ -780,11 +718,11 @@ and (max-width: 1024px) {
             transform: rotate(45deg);
             top: 13px;
             transition-delay: 0.3s;
-          }
+        }
         &:after {
             transform: rotate(-45deg);
             bottom: 13px;
-          }
+        }
         span {
             transform: rotate(45deg) scale(0);
             
@@ -917,7 +855,7 @@ and (max-width: 767px) {
         li { 
             a {
             font-size: 25px;
-          }
+            }
         }
     }
     .header {
@@ -947,10 +885,10 @@ and (max-width: 767px) {
     .active.burger {
         &:before {
             top: 9px;
-          }
+        }
         &:after {
             bottom: 9px;
-          }
+        }
     }
     
     .about {
@@ -996,6 +934,9 @@ and (max-width: 767px) {
             }
             .content {
                 &-inner {
+                    .inner-text {
+                        font-size: 15px;
+                    }
                     .percent {
                         width: 90px;
                         height: 90px;
@@ -1005,47 +946,6 @@ and (max-width: 767px) {
                             }
                         }
                     }
-                }
-            }
-            
-            &:nth-child(1) {
-                svg circle:nth-child(4) {
-                    stroke: #DD4B25;
-                    
-                    stroke-dasharray: calc(635 - (635  * 85) / 100);
-                }
-            }
-            &:nth-child(2) {
-                svg circle:nth-child(4) {
-                    stroke: #00a1ff;
-                    stroke-dasharray: calc(635 - (635 * 75) / 100);
-                }
-            }
-            &:nth-child(3) {
-                svg circle:nth-child(4) {
-                    stroke: #E5A228;
-                    stroke-dasharray: calc(500 - (500 * 20) / 100);
-                    stroke-dashoffset: calc(440 - (440 * 20) / 100);
-                }
-            }
-            &:nth-child(4) {
-                svg circle:nth-child(4) {
-                    stroke: #171516;
-                    stroke-dasharray: calc(440 - (440 * 70) / 100);
-                }
-            }
-            &:nth-child(5) {
-                svg circle:nth-child(4) {
-                    stroke: #634F96;
-                    stroke-dasharray: calc(635 - (635 * 40) / 100);
-                    stroke-dashoffset: calc(440 - (440 * 40) / 100);
-                }
-            }
-            &:nth-child(6) {
-                svg circle:nth-child(4) {
-                    stroke: #CA4545;
-                    stroke-dasharray: calc(600 - (600 * 35) / 100);
-                    stroke-dashoffset: calc(440 - (440 * 35) / 100);
                 }
             }
             }
@@ -1058,9 +958,6 @@ and (max-width: 767px) {
         &:hover .card {
             .content {
                 &-inner {
-                    .inner-text {
-                        font-size: 15px;
-                    }
                     .percent {
                         .progressbar-middle {
                             animation: progress 3s linear;
@@ -1079,18 +976,8 @@ and (max-width: 767px) {
         svg circle {
             width: 100%;
             height: 100%;
-            fill: none;
             stroke: #445561;
             stroke-width: 5;
-            stroke-linecap: round;
-            transform: translate(5px, 5px);
-        }
-        svg circle:nth-child(2) {
-            stroke-dasharray: 1600;
-            stroke-dashoffset: 1600;
-        }
-        .progressbar {
-            display: none;
         }
     }
     .projects {
