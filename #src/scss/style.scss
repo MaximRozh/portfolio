@@ -335,8 +335,6 @@ body {
                         
                     }
                     .percent {
-                        width: auto;
-                        position: relative;
                         box-shadow:  inset 0 0 50px #000;
                         background: #445561;
                         border-radius: 50%;
@@ -390,6 +388,12 @@ body {
                 }
             }
         }
+    }
+    svg {
+        width: 100%;
+        height: 100%;
+        max-width: 153px;
+        max-height: 153px;
     }
     svg circle {
         stroke-width: 10;
@@ -938,11 +942,9 @@ and (max-width: 767px) {
                         font-size: 15px;
                     }
                     .percent {
-                        width: 90px;
-                        height: 90px;
                         .number {
                             h2 {
-                                font-size: 32px;
+                                font-size: 28px;
                             }
                         }
                     }
@@ -968,15 +970,7 @@ and (max-width: 767px) {
                 }
             }
         }
-        svg {
-            position: relative;
-            width: 100px;
-            height: 100px;
-        }
         svg circle {
-            width: 100%;
-            height: 100%;
-            stroke: #445561;
             stroke-width: 5;
         }
     }
