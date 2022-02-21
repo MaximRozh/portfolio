@@ -638,6 +638,13 @@ body {
   transition: 4s;
 }
 
+.skills .container .card:nth-child(7) {
+  opacity: 0;
+  -webkit-transition: 4.5s;
+  -o-transition: 4.5s;
+  transition: 4.5s;
+}
+
 .skills .container .card .content {
   opacity: 0;
   -webkit-transform: translateY(50px);
@@ -736,8 +743,8 @@ body {
 
 .skills .container:hover .card {
   position: absolute;
-  top: 30%;
-  left: 22%;
+  top: 10%;
+  left: 35%;
   opacity: 1;
   -webkit-box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.2);
           box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.2);
@@ -763,6 +770,11 @@ body {
   -webkit-transition-delay: -webkit-calc(0.6s * var(--j));
        -o-transition-delay: calc(0.6s * var(--j));
           transition-delay: calc(0.6s * var(--j));
+}
+
+.skills .container:hover .card:nth-child(n+5) {
+  top: 70%;
+  left: -20%;
 }
 
 .skills svg {
@@ -1448,10 +1460,14 @@ body {
   }
 
   .skills .container:hover .card {
-    top: 25%;
-    left: 17%;
+    top: 0%;
+    left: 33%;
     margin-left: -webkit-calc(16.4% * var(--i));
     margin-left: calc(16.4% * var(--i));
+  }
+
+  .skills .container:hover .card:nth-child(n+5) {
+    left: -24%;
   }
 
   .projects {
@@ -1635,11 +1651,6 @@ body {
     font-size: 28px;
   }
 
-  .skills .container:hover .card {
-    top: 15%;
-    left: 20%;
-  }
-
   .skills:hover .card .content-inner .percent .progressbar-middle {
     -webkit-animation: progress 3s linear;
             animation: progress 3s linear;
@@ -1700,8 +1711,12 @@ body {
     margin-left: calc(30.5% * var(--i));
   }
 
+  .skills .container:hover .card:nth-child(4) {
+    display: none;
+  }
+
   .skills .container:hover .card:nth-child(n+4) {
     top: 55%;
-    left: -52%;
+    left: -82%;
   }
 }
